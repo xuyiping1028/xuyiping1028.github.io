@@ -8,13 +8,50 @@
           display: none;
       }
         .c2{
-            background-color: honeydew;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 10px;
             position: fixed;
             width: 60%;
             height: 100%;
         }
-        #modal p{
-
+        .c2 #username{
+            position: absolute;
+            height: 8%;
+            top: 10%;
+            left: 14%;
+            border: 0px;
+        }
+        .c2 #email1{
+            position: absolute;
+            height: 8%;
+            top: 26%;
+            left: 14%;
+            height: 8%;
+            border: 0px;
+        }
+        .c2 #Text{
+            position: absolute;
+            top: 42%;
+            left: 14%;
+            border: 0px;
+        }
+        .c2 #submit1{
+            background-color: teal;
+            position: absolute;
+            border: 0px;
+            width: 20%;
+            height: 10%;
+            left: 17%;
+            top: 84%;
+        }
+        .c2 #button1{
+            background-color: yellowgreen;
+            position: absolute;
+            border: 0px;
+            width: 20%;
+            height: 10%;
+            left: 62%;
+            top: 84%;
         }
     </style>
 </head>
@@ -22,13 +59,11 @@
    <div id="modal" class="c2 hide">
        <form onsubmit="checkName()">
            <br/>
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="username" type="text" placeholder="请留下你的姓名"><br/><br/>
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" placeholder="请留下你的邮箱"><br/><br/>
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea id="Text" rows="7" cols="22" placeholder="请留言..."></textarea><br/><br/>
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           <input type="submit" value="发送" onclick="Success();">
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-           <input type="button" value="退出" onclick="Hide();">
+           <input id="username" type="text" placeholder="请留下你的姓名"><br/><br/>
+           <input id="email1" type="email" placeholder="请留下你的邮箱"><br/><br/>
+           <textarea id="Text" rows="7" cols="22" placeholder="请留言..."></textarea><br/><br/>
+           <input id="submit1" type="submit" value="发送" onclick="Success()">
+           <input id="button1" type="button" value="退出" onclick="Hide()">
        </form>
    </div>
 </body>
