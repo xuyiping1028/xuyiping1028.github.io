@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>许意平</title>
     <style type="text/css">
+        body{
+            margin: 0px;
+        }
         .d1 img{
             background-size:cover;
             position: absolute;
@@ -54,15 +57,30 @@
             color: #4cffcc;
             font: 20px 微软雅黑;
         }
+        .d1 .d2 .i1{
+            position: absolute;
+            display: flex;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 10%;
+            left: 70%;
+            width: 28%;
+            height: 60%;
+
+        }
     </style>
 </head>
 <body>
   <div class="d1">
-      <img src="F7429412C75C7F01235543DFD72DC5AD.png">
+      <img src="image/F7429412C75C7F01235543DFD72DC5AD.png">
       <p class="p1">欢迎来到我的个人网站</p>
-      <a class="a1" href="#" target="_parent">个人简介</a>
+      <a class="a1" href="atest2.html" target="Frame">个人简介</a>
       <a class="a2" href="#">个人相册</a>
       <a class="a3" href="#">有事请留言</a>
+      <div class="d2">
+          <iframe class="i1" name="Frame" frameborder="0px" ></iframe>
+      </div>
   </div>
 </body>
 </html>
