@@ -22,64 +22,74 @@
             margin: auto;
             top: 40%;
             color: ivory;
-            font: 30px 微软雅黑;
+            font: 30px 华文行楷;
         }
         .d1 .a1{
             position: absolute;
             display: flex;
-            left: 0;
             right: 0;
-            margin: auto;
             top: 5%;
+            margin: auto;
             left: 70%;
+            right: 23.5%;
             color: #4cffcc;
             font: 20px 微软雅黑;
         }
         .d1 .a2{
             position: absolute;
             display: flex;
-            left: 0;
             right: 0;
             margin: auto;
             top: 5%;
             left: 80%;
+            right: 13.5%;
             color: #4cffcc;
             font: 20px 微软雅黑;
         }
         .d1 .a3{
             position: absolute;
             display: flex;
-            left: 0;
             right: 0;
             margin: auto;
             top: 5%;
             left: 90%;
+            right: 2%;
             color: #4cffcc;
             font: 20px 微软雅黑;
         }
         .d1 .d2 .i1{
             position: absolute;
             display: flex;
-            left: 0;
-            right: 0;
             margin: auto;
             top: 10%;
             left: 70%;
             width: 28%;
             height: 60%;
-
+        }
+        .d1 .d3 .i3{
+            position: absolute;
+            display: flex;
+            margin: auto;
+            top: 20%;
+            left: 40%;
+            width: 30%;
+            height: 52%;
         }
     </style>
 </head>
 <body>
-  <div class="d1">
+  <div class="d1" id="test" >
       <img src="F7429412C75C7F01235543DFD72DC5AD.png">
       <p class="p1">欢迎来到我的个人网站</p>
-      <a class="a1" href="atest2.html" target="Frame">个人简介</a>
+      <a class="a1" href="atest2.html" target="Frame1" >个人简介</a>
       <a class="a2" href="#">个人相册</a>
-      <a class="a3" href="#">有事请留言</a>
+      <a class="a3" href="atest3.html" target="Frame2">有事请留言</a>
+
       <div class="d2">
-          <iframe class="i1" name="Frame" frameborder="0px" ></iframe>
+          <iframe class="i1" name="Frame1" frameborder="0px" ></iframe>
+      </div>
+      <div class="d3">
+          <iframe class="i3" name="Frame2" frameborder="0px"></iframe>
       </div>
   </div>
 </body>
