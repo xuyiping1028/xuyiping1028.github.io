@@ -5,11 +5,30 @@
     <title></title>
 </head>
 <style type="text/css">
-    p{
-        color: lightseagreen;
+    .hide{
+        display: none;
+    }
+    .d1{
+        background-color: rgba(255,255,255,0.2);
+        position: absolute;
+        height: 90%;
+
+    }
+   .d1 p{
+        /*color: lightseagreen;*/
+       color: fuchsia;
+    }
+    .d1 #button1{
+        background-color: rgba(96, 13, 162, 0.6);
+        position: absolute;
+        left: 69%;
+        top: 93%;
+        width: 30%;
+        border: 0px;
     }
 </style>
 <body>
+<div class="d1 hide" id="ds">
      <p>姓名：许意平</p>
      <p>性别：男</p>
      <p>年龄：20</p>
@@ -17,5 +36,13 @@
      <p>学历：本科</p>
      <p>QQ：2424094054</p>
      <p>邮箱：x2424094054@163.com</p>
+    <input id="button1" type="button" value="关闭" onclick="Guanbi()">
+</div>
 </body>
 </html>
+<script>
+    document.getElementById('ds').classList.remove('hide');
+    function Guanbi() {
+        document.getElementById('ds').classList.add('hide');
+    }
+</script>
