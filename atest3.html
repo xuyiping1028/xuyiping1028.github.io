@@ -20,21 +20,43 @@
 </head>
 <body>
    <div id="modal" class="c2 hide">
-       <form>
+       <form onsubmit="checkName()">
            <br/>
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="请留下你的姓名"><br/><br/>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="username" type="text" placeholder="请留下你的姓名"><br/><br/>
            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" placeholder="请留下你的邮箱"><br/><br/>
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="7" cols="22" placeholder="请留言..."></textarea><br/><br/>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea id="Text" rows="7" cols="22" placeholder="请留言..."></textarea><br/><br/>
            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           <input type="submit" value="发送"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+           <input type="submit" value="发送" onclick="Success();">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
            <input type="button" value="退出" onclick="Hide();">
        </form>
    </div>
 </body>
 </html>
 <script>
+    var flag1=false;
+    var flag2=false;
         document.getElementById('modal').classList.remove('hide');
     function  Hide() {
         document.getElementById('modal').classList.add('hide');
     }
+    function checkName(){
+        var inputid=document.getElementById('username').value;
+        var inputtext=document.getElementById('Text').value;
+        if(inputid){
+            flag1=true;
+            return true;
+        }
+        else{
+            alert("用户不能为空");
+        }
+        if(inputtext){
+            flag2=true;
+            return true;
+        }
+        else{
+            alert("内容不能为空");
+        }
+    }
+
 </script>
