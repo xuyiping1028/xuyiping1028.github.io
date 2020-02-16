@@ -19,6 +19,7 @@
             height: 8%;
             top: 10%;
             left: 14%;
+            width: 70%;
             border: 0px;
         }
         .c2 #email1{
@@ -26,14 +27,17 @@
             height: 8%;
             top: 26%;
             left: 14%;
-            height: 8%;
+            width: 70%;
             border: 0px;
         }
         .c2 #Text{
             position: absolute;
             top: 42%;
             left: 14%;
+            width: 70%;
             border: 0px;
+            /* 设置文本域不可拉伸 */
+            resize: none;
         }
         .c2 #submit1{
             background-color: teal;
@@ -44,6 +48,9 @@
             left: 17%;
             top: 84%;
         }
+        .c2 #submit1:active{
+            background-color: aqua;
+        }
         .c2 #button1{
             background-color: yellowgreen;
             position: absolute;
@@ -52,6 +59,9 @@
             height: 10%;
             left: 62%;
             top: 84%;
+        }
+        .c2 #button1:active{
+            background-color: yellow;
         }
     </style>
 </head>
@@ -69,8 +79,6 @@
 </body>
 </html>
 <script>
-    var flag1=false;
-    var flag2=false;
         document.getElementById('modal').classList.remove('hide');
     function  Hide() {
         document.getElementById('modal').classList.add('hide');
@@ -78,20 +86,20 @@
     function checkName(){
         var inputid=document.getElementById('username').value;
         var inputtext=document.getElementById('Text').value;
-        if(inputid){
-            flag1=true;
-            return true;
+        if(inputid==false){
+            // return true;
+            alert("用户不能为空")
         }
-        else{
-            alert("用户不能为空");
-        }
-        if(inputtext){
-            flag2=true;
-            return true;
-        }
-        else{
+        // else{
+        //     alert("用户不能为空");
+        // }
+        if(inputtext==false){
+            // return true;
             alert("内容不能为空");
         }
+        // else{
+        //     alert("内容不能为空");
+        // }
     }
 
 </script>
