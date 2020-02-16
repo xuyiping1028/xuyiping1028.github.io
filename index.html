@@ -6,14 +6,21 @@
     <style type="text/css">
         body{
             margin: 0px;
+            padding: 0px;
         }
-        .d1 img{
-            background-size:cover;
-            position: absolute;
+        html{
             width: 100%;
             height: 100%;
+            background-size: cover;
+            background: linear-gradient(to right, dodgerblue, black) no-repeat;
         }
-        .d1 .p1{
+        /*.d1 img{*/
+        /*    background-size:cover;*/
+        /*    position: absolute;*/
+        /*    width: 100%;*/
+        /*    height: 100%;*/
+        /*}*/
+        .d1 #show{
             position: absolute;
             display: flex;
             justify-content: center;
@@ -21,18 +28,44 @@
             right: 0;
             margin: auto;
             top: 40%;
-            color: ivory;
+            color: blueviolet;
             font: 30px 华文行楷;
+        }
+
+        .d1 #p_1{
+            position: absolute;
+            display: flex;
+            width: 6.8%;
+            left: 93%;
+            top: 90%;
+            color: #2d99dc;
+            font: 20px 微软雅黑;
+        }
+        .d1 #p_2{
+            position: absolute;
+            display: flex;
+            left: 91%;
+            top: 91.4%;
+            width: 1%;
+            border-right: 1px #fbf8ff solid;
         }
         .d1 .a1{
             position: absolute;
             display: flex;
             top: 5%;
             margin: auto;
-            left: 70%;
-            right: 23.5%;
+            left: 71%;
+            width: 7.6%;
+            /*right: 23.5%;*/
             color: #4cffcc;
             font: 20px 微软雅黑;
+            border-right: 1px solid #694eff;
+            text-align: center;
+            text-decoration: none;
+        }
+        .d1 .a1:hover{
+            color: orangered;
+            text-decoration: underline;
         }
         .d1 .a2{
             position: absolute;
@@ -40,9 +73,17 @@
             margin: auto;
             top: 5%;
             left: 80%;
-            right: 13.5%;
+            width: 8.5%;
+            /*right: 13.5%;*/
             color: #4cffcc;
             font: 20px 微软雅黑;
+            border-right: 1px solid #694eff;
+            text-align: center;
+            text-decoration: none;
+        }
+        .d1 .a2:hover{
+            color: orangered;
+            text-decoration: underline;
         }
         .d1 .a3{
             position: absolute;
@@ -50,9 +91,15 @@
             margin: auto;
             top: 5%;
             left: 90%;
-            right: 2%;
+            width: 8%;
+            /*right: 2%;*/
             color: #4cffcc;
             font: 20px 微软雅黑;
+            text-decoration: none;
+        }
+        .d1 .a3:hover{
+            color: orangered;
+            text-decoration: underline;
         }
         .d1 .d2 .i1{
             position: absolute;
@@ -60,8 +107,9 @@
             margin: auto;
             top: 10%;
             left: 70%;
-            width: 28%;
-            height: 60%;
+            width: 18%;
+            height: 56%;
+            border: none;
         }
         .d1 .d3 .i3{
             position: absolute;
@@ -69,19 +117,22 @@
             margin: auto;
             top: 20%;
             left: 40%;
-            width: 30%;
+            width: 28%;
             height: 52%;
+            border: none;
         }
     </style>
 </head>
-<body onload="msg(this)">
-  <div class="d1" id="test" >
-      <img src="F7429412C75C7F01235543DFD72DC5AD.png">
-      <p class="p1">欢迎来到我的个人网站</p>
-      <a class="a1" href="atest2.html" target="Frame1" >个人简介</a>
-      <a class="a2" href="#">个人相册</a>
-      <a class="a3" href="atest3.html" target="Frame2">有事请留言</a>
-
+<body onload="startTime()">
+  <div class="d1" id="test">
+<!--      <img src="image/F7429412C75C7F01235543DFD72DC5AD.png">-->
+      <p id="p1" style="display: none">欢迎来到我的个人网站</p>
+      <p id="show"></p>
+      <p id="p_1"></p>
+      <p id="p_2">&nbsp;</p>
+          <a class="a1" href="atest2.html" target="Frame1" ><span>个人简介</span></a>
+          <a class="a2" href="#"><span>个人相册</span></a>
+          <a class="a3" href="atest3.html" target="Frame2"><span>有事请留言</span></a>
       <div class="d2">
           <iframe class="i1" name="Frame1" frameborder="0px" ></iframe>
       </div>
@@ -89,10 +140,50 @@
           <iframe class="i3" name="Frame2" frameborder="0px"></iframe>
       </div>
   </div>
-    <script>
-    function msg() {
-        alert("网页加载完毕");
-    }
-</script>
+  <script>
+      function startTime() {
+          var date =new Date();
+          var h=date.getHours();
+          var m=date.getMinutes();
+          var s=date.getSeconds();
+          h=checkTime(h);
+          m=checkTime(m);
+          s=checkTime(s);
+          document.getElementById("p_1").innerHTML=h+":"+m+":"+s;
+          t=setTimeout(function () {
+              startTime();
+          },500);
+      }
+      function checkTime(i) {
+          if(i<10){
+              i="0"+i;
+          }
+          return i;
+      }
+  </script>
+  <script>
+       // function f(){
+       //    var story = document.getElementById("p1");
+       //    var s = document.getElementById("show");
+       //    var i = 0;
+       //    timer=setInterval(function(){
+       //        s.innerHTML=story.innerHTML.substring(0,i);
+       //        i++;
+       //        if(s.innerHTML==story.innerHTML){
+       //            clearInterval(timer);
+       //        }
+       //    },500);
+       //}
+       var txt=document.getElementById("p1").innerHTML;
+       var heartTextCopy=document.getElementById('show');
+       var tem=0;
+       var inter=setInterval(function(){
+           tem++;
+           heartTextCopy.innerHTML=txt.substring(0,tem);
+           if(tem>txt.length){
+               clearInterval(inter);
+           }
+       },200)
+  </script>
 </body>
 </html>
